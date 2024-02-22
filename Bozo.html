@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css"> 
+    <title>Bozo!</title>
+</head>    
+<h1 id = title>Bozo!</h1> 
+<body>
+    <table>
+        <tr class = "row">
+            <th class = "column">Possible Outcomes</th> 
+            <th class = "column">Your score</th>
+        </tr> 
+        <tr class = "row">
+            <td>One</td> 
+            <td id = 1_score>0</td>
+        </tr> 
+        <tr class = "row">
+            <td>Two</td> 
+            <td id = 2_score>0</td>
+        </tr> 
+        <tr class = "row">
+            <td>Three</td> 
+            <td id = 3_score>0</td>
+        </tr> 
+        <tr class = "row">
+            <td>Four</td> 
+            <td id = 4_score>0</td>
+        </tr> 
+        <tr class = "row">
+            <td>Five</td> 
+            <td id = 5_score>0</td>
+        </tr> 
+        <tr class = "row">
+            <td>Six</td> 
+            <td id = 6_score>0</td>
+        </tr>    
+        <tr class = "row">
+            <td>Full</td> 
+            <td id = Full class = Special>0</td>
+        </tr> 
+        <tr class = "row">
+            <td>Straight</td> 
+            <td id = Straight class = Special>0</td>
+        </tr> 
+        <tr class = "row">
+            <td>Quadra</td> 
+            <td id = Quadra class = Special>0</td>
+        </tr>  
+        <tr class = "row">
+            <td>General</td> 
+            <td id = General class = Special>0</td>
+        </tr>  
+        <tr class = "row">
+            <td>Sum</td> 
+            <td id = Sum>0</td>
+        </tr> 
+    </table>   
+    <div id = dice_container>
+        <img class = dice src="assets/dice1.png" > 
+        <img class = dice src="assets/dice2.png" > 
+        <img class = dice src="assets/dice3.png" > 
+        <img class = dice src="assets/dice4.png" > 
+        <img class = dice src="assets/dice5.png" >
+    </div>
+    <button id = button>
+        Roll Dice
+    </button>   
+    <button id = dark_mode>
+        Toggle Dark Mode
+    </button>
+</body>   
+<script src="logic.js"></script>
+</html> 

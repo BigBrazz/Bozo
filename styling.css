@@ -1,0 +1,49 @@
+h1{
+    left: 48.5%; 
+    position: relative;  
+}
+.dice{
+    width: 5%;  
+    left: 37.5%; 
+    position: relative;  
+    margin-top: 1.5%;
+} 
+table{
+    margin-left: auto;  
+    margin-right: auto;  
+    position: relative; 
+    margin-top: 2.5%; 
+    border: 2px; 
+    border-style: solid;
+    border-color: black; 
+    text-align: center; 
+    border-collapse: collapse;  
+    width: 10%;
+} 
+#button{
+    position: relative; 
+    left: 49%; 
+    margin-top: 0.5%;
+}  
+.column{
+    border: 2px; 
+    border-style: solid;
+    border-color: black;
+} 
+.row{
+    border-bottom: 1px solid black;  
+}  
+.selected{
+    box-shadow:0px 12px 22px 1px #333;  
+    border: 2px; 
+    border-style: solid;
+    border-color: red; 
+    border-radius: 25px;
+} 
+.chosen{ 
+    pointer-events: none;
+} 
+.dark-mode {
+    background-color: black;
+    color: white;
+} 
