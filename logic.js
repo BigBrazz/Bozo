@@ -221,4 +221,4 @@ add_class()
 document.getElementById("button").addEventListener("click", dice_rolling);   
 document.getElementById("dark_mode").addEventListener("click", Dark);   
 
-
+hello
