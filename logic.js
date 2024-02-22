@@ -91,6 +91,9 @@ function General(){
     let found = false;  
     let j = 1; 
     let check = 0;   
+    if (document.getElementById("General").classList.contains("chosen")) {
+        return;
+    };    
     document.getElementById("General").innerHTML = 0;
     while (found === false){
         var die = document.getElementsByClassName("dice"); 
@@ -122,6 +125,9 @@ function Straight(){
     let j = 1;    
     let check = 0 
     let num = 0;
+    if (document.getElementById("Straight").classList.contains("chosen")) {
+        return;
+    };    
     document.getElementById("Straight").innerHTML = 0;
     while (found === false){
         var die = document.getElementsByClassName("dice"); 
@@ -155,6 +161,9 @@ function Full(){
     var die = document.getElementsByClassName("dice"); 
     let total = 0;  
     let check = 0;
+    if (document.getElementById("Full").classList.contains("chosen")) {
+        return;
+    };    
     document.getElementById("Full").innerHTML = 0;
     for (let j = 1; j < 7; j++){ 
         let amount = 0; 
@@ -182,7 +191,7 @@ function Full(){
 
 function Choose(){
     var die = document.getElementsByClassName("dice"); 
-    this.classList.toggle('chosen');   
+    this.classList.toggle('chosen');    
     for (let j = 1; j < 7; j++){
         if (document.getElementById(j + "_score").classList.contains('chosen')){ 
             document.getElementById("Sum").innerHTML = Number(document.getElementById(j + "_score").innerHTML) + Number(document.getElementById("Sum").innerHTML);
@@ -198,8 +207,10 @@ function Choose(){
         };
     });   
     count = 0;   
-    for (let i = 0; i < 5; i++)
-        die.item(i).setAttribute("src", "assets/dice" + (i+1) + ".png");  
+    for (let i = 0; i < 5; i++) {
+        die.item(i).classList.remove("selected");
+        die.item(i).setAttribute("src", "assets/dice" + (i+1) + ".png");         
+    };
 };
 
 function Select(){
@@ -219,4 +230,4 @@ function Dark() {
 Select()
 add_class()
 document.getElementById("button").addEventListener("click", dice_rolling);   
-document.getElementById("dark_mode").addEventListener("click", Dark);    
+document.getElementById("dark_mode").addEventListener("click", Dark);     
