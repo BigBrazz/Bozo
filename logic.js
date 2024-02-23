@@ -193,10 +193,9 @@ function Full(){
 
 function Choose(){
     var die = document.getElementsByClassName("dice"); 
-    this.classList.toggle('chosen');    
+    this.classList.toggle('chosen');     
     for (let j = 1; j < 7; j++){
         if (document.getElementById(j + "_score").classList.contains('chosen')){ 
-            document.getElementById("Sum").innerHTML = Number(document.getElementById(j + "_score").innerHTML) + Number(document.getElementById("Sum").innerHTML);
             continue;
         }; 
         document.getElementById(j + "_score").innerHTML = 0;   
@@ -204,10 +203,9 @@ function Choose(){
     document.querySelectorAll('.Special').forEach(function(item) {
         if (item.classList.contains('chosen') === false) {
             item.innerHTML = 0;
-        } else {
-            document.getElementById("Sum").innerHTML = Number(item.innerHTML) + Number(document.getElementById("Sum").innerHTML);
         };
     });   
+    document.getElementById("Sum").innerHTML = Number(this.innerHTML) + Number(document.getElementById("Sum").innerHTML);
     count = 0;   
     for (let i = 0; i < 5; i++) {
         die.item(i).classList.remove("selected");
@@ -224,8 +222,7 @@ function Select(){
     });
 };  
 
-function Under(number) {
-    alert(number)
+function Under(number) { 
     let array = [1,2,3,4,5,6];
     let last = array[array. length - 1]; 
     if (document.getElementById("under").classList.contains("under-mode")) {
