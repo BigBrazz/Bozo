@@ -6,15 +6,17 @@ function random_int(){
 }; 
 
 function dice_rolling(){
+    let temp = 0
     if (count < 300){ 
         var die = document.getElementsByClassName("dice"); 
         for (let i = 0; i < die.length; i++) { 
-        if (die[i].classList.contains('selected')){ 
-            continue;
-        }; 
-        var img = "assets/dice" + random_int() + ".png";
-        die.item(i).setAttribute("src", img);  
+            if (die[i].classList.contains('selected')){ 
+                continue;
+            }; 
+            var img = "assets/dice" + Under(random_int()) + ".png";
+            die.item(i).setAttribute("src", img);  
         };   
+        document.getElementById("under").classList.remove("under-mode");
         scores()  
         Quadra() 
         General() 
@@ -220,14 +222,30 @@ function Select(){
     document.querySelectorAll('.Special').forEach(function(item) {
         item.addEventListener('click', Choose)
     });
+};  
+
+function Under(number) {
+    alert(number)
+    let array = [1,2,3,4,5,6];
+    let last = array[array. length - 1]; 
+    if (document.getElementById("under").classList.contains("under-mode")) {
+        number = last - (number - 1);
+    }; 
+    return number;
 }; 
+
+function Set_Class() {
+    var element = document.getElementById("under"); 
+    element.classList.toggle("under-mode");
+};
 
 function Dark() {
     var element = document.body;
     element.classList.toggle("dark-mode");
-  }
+};
 
 Select()
-add_class()
+add_class() 
+document.getElementById("under").addEventListener("click", Set_Class);
 document.getElementById("button").addEventListener("click", dice_rolling);   
 document.getElementById("dark_mode").addEventListener("click", Dark);     
