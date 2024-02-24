@@ -1,4 +1,5 @@
 let count = 0  
+let round = 0 
 
 function random_int(){
     let int = Math.floor(Math.random() * 6) + 1; 
@@ -7,7 +8,7 @@ function random_int(){
 
 function dice_rolling(){
     let temp = 0
-    if (count < 300){ 
+    if (count < 3){ 
         var die = document.getElementsByClassName("dice"); 
         for (let i = 0; i < die.length; i++) { 
             if (die[i].classList.contains('selected')){ 
@@ -193,7 +194,11 @@ function Full(){
 
 function Choose(){
     var die = document.getElementsByClassName("dice"); 
-    this.classList.toggle('chosen');     
+    this.classList.toggle('chosen');      
+    round ++;  
+    if (round === 10){
+        document.getElementById("win_screen").classList.toggle('win');
+    };
     for (let j = 1; j < 7; j++){
         if (document.getElementById(j + "_score").classList.contains('chosen')){ 
             continue;

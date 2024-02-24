@@ -1,6 +1,10 @@
 h1{
     left: 48.5%; 
     position: relative;  
+} 
+body{
+    position: absolute; 
+    
 }
 .dice{
     width: 5%;  
@@ -12,7 +16,7 @@ table{
     margin-left: auto;  
     margin-right: auto;  
     position: relative; 
-    margin-top: 2.5%; 
+    margin-top: 5%; 
     border: 2px; 
     border-style: solid;
     border-color: black; 
@@ -46,4 +50,10 @@ table{
 .dark-mode {
     background-color: black;
     color: white;
-} 
+}  
+.win {
+    position: absolute; 
+    background-color: rgb(104, 104, 104); 
+    z-index: 7; 
+    opacity: 0.5; 
+}
