@@ -196,10 +196,6 @@ function Choose(){
     var die = document.getElementsByClassName("dice"); 
     this.classList.toggle('chosen');      
     round ++;  
-    if (round === 10){ 
-        document.getElementById("win_screen").classList.toggle('win');
-        document.getElementById("win_screen").innerHTML = "YOUR TOTAL SCORE IS " + Number(document.getElementById("Sum").innerHTML);
-    };
     for (let j = 1; j < 7; j++){
         if (document.getElementById(j + "_score").classList.contains('chosen')){ 
             continue;
@@ -212,6 +208,10 @@ function Choose(){
         };
     });   
     document.getElementById("Sum").innerHTML = Number(this.innerHTML) + Number(document.getElementById("Sum").innerHTML);
+    if (round === 10){ 
+        document.getElementById("win_screen").classList.toggle('win');
+        document.getElementById("win_screen").innerHTML = "YOUR TOTAL SCORE IS " + Number(document.getElementById("Sum").innerHTML);
+    };
     count = 0;   
     for (let i = 0; i < 5; i++) {
         die.item(i).classList.remove("selected");
