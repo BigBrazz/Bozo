@@ -1,5 +1,6 @@
 let count = 0  
-let round = 0  
+let round = 0   
+document.getElementById("again").classList.add("hide")
 
 function random_int(){
     let int = Math.floor(Math.random() * 6) + 1; 
@@ -209,9 +210,10 @@ function Choose(){
     });   
     document.getElementById("Sum").innerHTML = Number(this.innerHTML) + Number(document.getElementById("Sum").innerHTML);
     if (round === 10){ 
-        document.getElementById("win_screen").classList.toggle('win'); 
-        document.getElementById("play_again").classList.toggle('again'); 
-        document.getElementById("again").classList.toggle("position");
+        document.getElementById("win_screen").classList.add('win'); 
+        document.getElementById("play_again").classList.add('again'); 
+        document.getElementById("again").classList.add("position"); 
+        document.getElementById("again").classList.remove("hide")
         document.getElementById("play_again").innerHTML = "YOUR TOTAL SCORE IS " + Number(document.getElementById("Sum").innerHTML); 
     };
     count = 0;   
