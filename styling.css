@@ -3,9 +3,9 @@ h1{
     position: fixed;  
 } 
 body{
-    position: absolute; 
-    
+    position: absolute;  
 }
+
 .dice{
     width: 5%;  
     left: 37.25%; 

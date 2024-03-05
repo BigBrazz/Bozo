@@ -1,5 +1,6 @@
 let count = 0  
 let round = 0   
+document.getElementById("again").classList.add("position");
 document.getElementById("again").classList.add("hide")
 
 function random_int(){
@@ -195,7 +196,7 @@ function Full(){
 
 function Choose(){
     var die = document.getElementsByClassName("dice"); 
-    this.classList.toggle('chosen');      
+    this.classList.add('chosen');      
     round ++;  
     for (let j = 1; j < 7; j++){
         if (document.getElementById(j + "_score").classList.contains('chosen')){ 
@@ -211,8 +212,7 @@ function Choose(){
     document.getElementById("Sum").innerHTML = Number(this.innerHTML) + Number(document.getElementById("Sum").innerHTML);
     if (round === 10){ 
         document.getElementById("win_screen").classList.add('win'); 
-        document.getElementById("play_again").classList.add('again'); 
-        document.getElementById("again").classList.add("position"); 
+        document.getElementById("play_again").classList.add('again');  
         document.getElementById("again").classList.remove("hide")
         document.getElementById("play_again").innerHTML = "YOUR TOTAL SCORE IS " + Number(document.getElementById("Sum").innerHTML); 
     };
@@ -251,8 +251,26 @@ function Dark() {
     element.classList.toggle("dark-mode");
 };
 
+function Reset() {
+    document.getElementById("win_screen").classList.remove('win'); 
+    document.getElementById("play_again").classList.remove('again');  
+    document.getElementById("again").classList.add("hide")   
+    document.getElementById("play_again").innerHTML = "";  
+    document.getElementById("Sum").innerHTML = 0;
+    round = 0; 
+    for (let j = 1; j < 7; j++){
+        document.getElementById(j + "_score").innerHTML = 0; 
+        document.getElementById(j + "_score").classList.remove("chosen");
+    }; 
+    document.querySelectorAll('.Special').forEach(function(item) {
+        item.innerHTML = 0; 
+        item.classList.remove("chosen");
+    }); 
+};
+
 Select()
 add_class() 
 document.getElementById("under").addEventListener("click", Set_Class);
 document.getElementById("button").addEventListener("click", dice_rolling);   
-document.getElementById("dark_mode").addEventListener("click", Dark);     
+document.getElementById("dark_mode").addEventListener("click", Dark); 
+document.getElementById("again").addEventListener("click", Reset);     
