@@ -195,6 +195,10 @@ function Full(){
 }; 
 
 function Choose(){
+    if (count === 0) {
+        alert("Can't choose before rolling")
+        return; 
+    };
     var die = document.getElementsByClassName("dice"); 
     this.classList.add('chosen');      
     round ++;  
