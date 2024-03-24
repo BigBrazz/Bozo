@@ -52,7 +52,7 @@ table{
 } 
 .dark-mode {
     background-color: black;
-    color: white;
+    color: white; 
 }  
 .win {
     position: fixed;  
@@ -89,4 +89,12 @@ table{
     top: 50%;
     left: 48.7%; 
     z-index: 9;
+} 
+#dark_mode{
+    position: relative; 
+    left: 40%;
+} 
+#under{
+    position: relative; 
+    left: 44.5%;
 }
